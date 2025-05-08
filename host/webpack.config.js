@@ -26,9 +26,13 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
+      filename: 'remoteEntry.js',
       name: 'host',
       remotes: {
         remote: 'remote@http://localhost:3001/remoteEntry.js',
+      },
+      exposes: {
+        './Header': path.resolve(__dirname, 'src', 'components', 'Header.js'),
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.2.0' },

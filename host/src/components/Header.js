@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
+  const title = props.title;
   return (
     <header style={{
       backgroundColor: '#4096ff',
@@ -9,7 +10,7 @@ const Header = () => {
       textAlign: 'center',
       boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
-      <h1 style={{ margin: 0 }}>Remote Application</h1>
+      <h1 style={{ margin: 0 }}>{ title }</h1>
     </header>
   );
 };

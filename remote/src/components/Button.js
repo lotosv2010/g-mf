@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Button = () => {
+const Button = (props) => {
+  const text = props.text;
   return (
     <button
       style={{
@@ -13,7 +14,7 @@ const Button = () => {
       }}
       onClick={() => alert('Button from Remote App clicked!')}
     >
-      Remote Button
+      { text }
     </button>
   );
 };
